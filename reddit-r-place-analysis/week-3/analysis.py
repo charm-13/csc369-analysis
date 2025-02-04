@@ -2,7 +2,6 @@ import sys
 from datetime import datetime
 import time
 import duckdb
-import polars as pl
 
 def process(begin, end):
     try:
