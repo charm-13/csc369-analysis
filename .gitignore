@@ -2,3 +2,5 @@
 **/2022_place_canvas_history.csv
 **/*.parquet
 **/week-5/img/
+**/.env
+**/.cache
