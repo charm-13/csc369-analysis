@@ -4,3 +4,7 @@
 **/week-5/img/
 **/.env
 **/.cache
+**/*.conf
+**/mbdump/
+**/mbdump-derived/
+**/sql/
