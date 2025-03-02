@@ -113,7 +113,7 @@ def get_playlists():
 
 def get_library():
     """
-    liked songs
+    liked songs, etc
     """
     ## library
     library = sp.current_user_saved_tracks()
@@ -130,6 +130,18 @@ def get_library():
     json_file_path = f"./data/liked-songs.json"
     with open(json_file_path, "w", encoding="utf-8") as json_file:
         json.dump(library, json_file, indent=4)
+    
+    ## artists
+    artists = []
+    for song in songs:
+        for a in song["track"]["artists"]:
+            print(f"requesting: {a["id"]}")
+            artists.append(sp.artist(a["id"]))
+        time.sleep(0.25)
+            
+    json_file_path = f"./data/liked-artists.json"
+    with open(json_file_path, "a", encoding="utf-8") as json_file:
+        json.dump(list(set(artists)), json_file, indent=4)
       
 if __name__ == "__main__":
     # curr_user = insaneduck
